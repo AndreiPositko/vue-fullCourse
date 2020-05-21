@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue-full</title>
+  <link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+
+  <div id="app">
+    <button v-on:click='increase(2)'>Click me</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove='updateCoordinates'>
+      Coordinates: {{x}} / {{y}}
+      - <span v-on:mousemove='dummy'>DEAD SPOT</span> <!-- v-on:mousemove.stop -->
+    </p>
+    <input type="text" v-on:keyup='alertMe' style="display: block; margin-bottom: 10px;">
+
+    <input type="text" v-on:input='changeTitle'>
+    <p>{{ title }}</p>
+
+    <input type="text" v-model='name'>
+    <p>{{ name }}</p>
+
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secondCounter++">Increase Second</button>
+
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ result() }} | {{ output }}</p>
+
+    <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+    <div class="demo" :class="{red: attachRed}"></div>
+    <div class="demo" :class='color'></div>
+    <div class="demo" :style='{backgroundColor: color}'></div>
+    <div class="demo" :style='myStyle'></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+    <hr>
+    <input type="text" v-model='color'>
+    <input type="text" v-model='width'>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
