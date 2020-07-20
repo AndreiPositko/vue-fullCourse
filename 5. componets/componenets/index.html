@@ -9,9 +9,15 @@
 
   <body>
     <div id="app">
-      <h1>{{ title }}</h1>
-      <button @click="title = 'Changed'">Update Title</button>
-      <button @click="destroy">Destroy</button>
+      <my-cmp></my-cmp>
+      <my-cmp></my-cmp>
+      <my-cmp></my-cmp>
+      <hr>
+    </div>
+
+    <div id="app2">
+      <his-cmp></his-cmp>
+      <his-cmp></his-cmp>
     </div>
 
     <script src="./app.js"></script>
